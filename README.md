@@ -1,0 +1,2 @@
+# auditoria-5s-runawana
+AUDITORIA 5S DE LA EMPRESA RUNAWANA HECHA POR LOS ESTUDIANTES DE LA UNIVERSIDAD DE LAS AMERICAS, Francisco Paucar, Cielo Pozo, John Quilumba
