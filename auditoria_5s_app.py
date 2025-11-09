@@ -264,7 +264,7 @@ if submitted:
     st.dataframe(resumen_general, use_container_width=True)
 
     # ========= TABLA FINAL (COLOREADA) =========
-    st.markdown("### Resulta")
+    st.markdown("### Cumplimiento por Área")
     styled = tabla_final.style.apply(
         lambda s: [color_porcentaje(v) if s.name == "%" else "" for v in s],
         axis=0
