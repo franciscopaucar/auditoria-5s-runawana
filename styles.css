@@ -1,0 +1,113 @@
+/* ===========================================================
+   FORZAR MODO CLARO (ELIMINA EL MODO OSCURO DE STREAMLIT)
+=========================================================== */
+:root {
+    color-scheme: light !important;
+}
+
+/* Fondo general */
+.stAppViewContainer, .main, .block-container {
+    background-color: #d3d3d3 !important;
+    font-family: "Century Gothic", sans-serif !important;
+}
+
+
+
+/* ===========================================================
+   INPUTS (Fecha, Auditor, Observaciones)
+=========================================================== */
+input, textarea, select,
+.stTextInput input, .stDateInput input, .stTextArea textarea {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #666666 !important;
+    border-radius: 6px !important;
+}
+
+/* Etiquetas de los inputs */
+.stTextInput label, .stDateInput label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+/* ===========================================================
+   OPCIONES SI / NO / NA
+=========================================================== */
+.stRadio label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+/* ===========================================================
+   BOTÓN PRINCIPAL (ESTE ES EL IMPORTANTE)
+=========================================================== */
+
+/* Streamlit cambia dinámicamente el botón, así que atacamos todas las clases */
+.stButton button,
+.stButton > button,
+button[kind="primary"],
+button[kind="secondary"],
+button:enabled {
+    background-color: #D6B892 !important;   /* Café claro */
+    color: #000000 !important;              /* Texto negro */
+    border-radius: 8px !important;
+    border: 2px solid #8C6C45 !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    font-family: "Century Gothic", sans-serif !important;
+}
+
+/* Hover (cuando pasas el mouse) */
+.stButton button:hover,
+button[kind="primary"]:hover,
+button[kind="secondary"]:hover {
+    background-color: #C29E70 !important;  /* Café más cálido */
+    border-color: #6A5338 !important;
+    cursor: pointer !important;
+}
+
+
+/* ===== HOVER CLARO EN EL MENÚ DE LOS TRES PUNTOS ===== */
+
+/* Fondo cuando se abre el menú */
+div[data-testid="stPopover"] ul[role="menu"] {
+    background-color: #2b2b2b !important; /* Se queda oscuro */
+}
+
+/* ESTO ES EL HOVER */
+div[data-testid="stPopover"] ul[role="menu"] > li:hover {
+    background-color: #dcdcdc !important;   /* Gris claro */
+}
+
+/* Texto normalmente */
+div[data-testid="stPopover"] ul[role="menu"] > li * {
+    color: #ffffff !important;   /* Blanco normal */
+}
+
+/* Texto cuando se pasa el mouse */
+div[data-testid="stPopover"] ul[role="menu"] > li:hover * {
+    color: #000000 !important;   /* Negro al pasar el mouse */
+}
+
+/* Contenedor para aplicarlo solo al resumen */
+.resumen-general .stMetric {
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+/* Título del metric */
+.resumen-general .stMetric label {
+    font-size: 30px !important;   /* ← CAMBIA AQUÍ EL TAMAÑO DEL TÍTULO */
+    font-weight: 600 !important;
+}
+
+/* Valor del metric */
+.resumen-general .stMetric div[data-testid="stMetricValue"] {
+    font-size: 28px !important;   /* ← CAMBIA AQUÍ EL TAMAÑO DEL VALOR */
+    font-weight: 800 !important;
+    color: #001B4D !important;
+}
+
