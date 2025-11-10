@@ -30,30 +30,30 @@ st.markdown("---")
 
 preguntas_5s = [
     {"Área": "BODEGA/CALIDAD", "Pregunta": "¿El piso de Bodega/Calidad se mantiene limpio y libre de polvo, restos de tela o empaques?"},
-    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Los estantes están etiquetados con el tipo o modelo de producto que contienen? "},
-    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Las herramientas o materiales se encuentran organizadas e identificadas? "},
+    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Los estantes están etiquetados con el tipo o modelo de producto que contienen?"},
+    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Las herramientas y materiales se encuentran organizadas e identificadas?"},
     {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Todas las luces del área funcionan correctamente y proporcionan buena iluminación?"},
-    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Las paredes presentan los estándares de calidad según el tipo de producto?"},
-    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Las ventanas se encuentran en buen estado, limpias y sin daños visibles?"},
+    {"Área": "BODEGA/CALIDAD", "Pregunta": "¿Existe señalización visible que identifique el área de Control de calidad y Bodega?"},
+
     {"Área": "PASILLO", "Pregunta": "¿El piso del pasillo se mantiene limpio, libre de restos de tela, hilos?"},
-    {"Área": "PASILLO", "Pregunta": "¿Los insumos o materiales se encuentran almacenados en estanterías, evitando colocarlos directamente en el piso? "},
+    {"Área": "PASILLO", "Pregunta": "¿El pasillo se mantiene despejado, sin materiales que obstaculicen el tránsito o acceso a las áreas?"},
     {"Área": "PASILLO", "Pregunta": "¿La mesa de trabajo de corte mantiene únicamente los materiales necesarios y ordenados?"},
     {"Área": "PASILLO", "Pregunta": "¿Las telas se encuentran dobladas y almacenadas en estanterías, evitando colocarlas directamente en el piso?"},
-    {"Área": "PASILLO", "Pregunta": "¿Los moldes cuentan con identificaciones claras y visibles? "},
+    {"Área": "PASILLO", "Pregunta": "¿La zona donde se almacenan los moldes para el proceso de corte cuenta con señalización clara y visible?"},
     {"Área": "PASILLO", "Pregunta": "¿La máquina de corte cuenta con una correcta gestión de cables para garantizar un uso seguro y ordenado?"},
-    {"Área": "PASILLO", "Pregunta": "¿Existe un extintor y botiquín que están ubicados en zonas accesibles y señalizadas correctamente?"},
+    {"Área": "PASILLO", "Pregunta": "¿Existe un extintor y botiquín ubicados en zonas accesibles y correctamente señalizados?"},
     {"Área": "PASILLO", "Pregunta": "¿Todas las luces del área funcionan correctamente y permiten buena visibilidad para el trabajo?"},
-    {"Área": "PASILLO", "Pregunta": "¿Las instalaciones eléctricas se encuentran en buen estado, protegidas y sin cables expuestos?"},
     {"Área": "PASILLO", "Pregunta": "¿Existe señaléticas visibles que identifique claramente las áreas o puestos de trabajo?"},
     {"Área": "PASILLO", "Pregunta": "¿Las ventanas se encuentran en buen estado y permiten el ingreso adecuado de luz natural al área de trabajo?"},
-    {"Área": "PASILLO", "Pregunta": "¿El techo se encuentra en buen estado, libre de suciedad, humedad?"},
+    {"Área": "PASILLO", "Pregunta": "¿Las instalaciones eléctricas se encuentran en buen estado, protegidas y sin cables expuestos?"},
+
     {"Área": "CONFECCIÓN", "Pregunta": "¿Los insumos o materiales se encuentran almacenados en contenedores identificados?"},
-    {"Área": "CONFECCIÓN", "Pregunta": "¿Las estaciones de trabajo están limpias y sin acumulación de materiales innecesarios?"},
-    {"Área": "CONFECCIÓN", "Pregunta": "¿La estantería de hilos está correctamente organizada por colores o tipos y cuenta con señalización visible?"},
+    {"Área": "CONFECCIÓN", "Pregunta": "¿Las estaciones de trabajo están limpias y sin acumulación de materiales innecesarios al finalizar la jornada laboral?"},
+    {"Área": "CONFECCIÓN", "Pregunta": "¿La estantería de hilos está correctamente organizada por colores y cuenta con señalización visible?"},
     {"Área": "CONFECCIÓN", "Pregunta": "¿Las paredes del área se encuentran libres de objetos innecesarios?"},
     {"Área": "CONFECCIÓN", "Pregunta": "¿Todas las luces del área funcionan correctamente y proporcionan buena iluminación?"},
-    {"Área": "CONFECCIÓN", "Pregunta": "¿Existe señaléticas visibles que identifique claramente las áreas o puestos de trabajo? "},
-    
+    {"Área": "CONFECCIÓN", "Pregunta": "¿Existe señaléticas visibles que identifique claramente las áreas o puestos de trabajo?"},
+
 ]
 
 st.subheader("Formulario de auditoría")
@@ -145,7 +145,7 @@ def grafico_linea(series_ok):
 
     # Etiquetas numéricas en la línea
     for i, v in enumerate(series_ok.values):
-        ax.text(i, v + 2, f"{v:.0f}%", ha='center', va='bottom',
+        ax.text(i, v + 2, f"{v:.2f}%", ha='center', va='bottom',
                 fontsize=9, fontweight='bold', color="#001B4D")
 
     # ======= CAMBIOS SOLICITADOS =======
@@ -227,7 +227,7 @@ if submitted:
 
     st.markdown("### Gráficos")
     colg1, colg2 = st.columns(2)
-    series_ok = resumen.loc[resumen.index != "TOTAL", "%"].round(2)
+    series_ok = resumen.loc[resumen.index != "TOTAL", "%"]
 
     with colg1:
         grafico_linea(series_ok)
